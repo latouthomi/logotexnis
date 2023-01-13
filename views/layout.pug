@@ -1,0 +1,28 @@
+doctype
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        meta(http-equiv='X-UA-Compatible' content='ie=edge')
+        title Λάτου Θώμη
+        link(rel="stylesheet", href="main.css")
+    body
+        .grid-container 
+            include header.pug
+
+            .aside 
+                //- .nav
+                .floating-menu
+                    hr
+                    h3 Αριστερό μενού
+                    a(href="/") Αρχική 
+                    if menuopt=="photos" 
+                        a(href="/photos") Φωτογραφίες Προσωπικές
+                        a(href="/photos1") Φωτογραφίες Επαγγελματικές
+                    else if menuopt=="erga" 
+                        a(href="/erga") Μυθιστορήματα
+                        a(href="/erga1") Θεατρικά Έργα (τραγωδίες)
+
+            block content
+
+            include footer.pug
